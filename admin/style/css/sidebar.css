@@ -1,0 +1,47 @@
+
+/*Side-nav-bar*/
+#sidebar-wrapper-default{
+    z-index: 1;
+    position: absolute;
+    width: 14%;
+    height: 100%;
+    overflow-y: auto;
+    background: #c8cdcd;
+}
+/*Default sidebar*/
+.sidebar-nav-default{
+    padding: 0;
+    list-style: none;
+
+
+}
+.sidebar-nav-default li{
+    text-indent: 20px;
+    line-height: 40px;
+}
+.sidebar-nav-default li a{
+    display: block;
+    text-decoration: none;
+    color: #5f5f61;
+}
+.sidebar-nav-default li a:hover{
+    background: #5f5f61;
+    color: #ffffff;
+}
+.sub{
+    display: none;
+    text-align: left;
+    padding-left: 6px;
+}
+.sub-report{
+    display: none;
+    text-align: left;
+    padding-left: 20%;
+}
+.sub-menu{
+    text-align: left;
+}
+.fa{
+    position: relative;
+    left:-20px;
+}

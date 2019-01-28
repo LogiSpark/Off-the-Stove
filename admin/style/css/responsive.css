@@ -1,0 +1,116 @@
+@charset "utf-8";
+/* CSS Document */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    p{
+        font-size: 22px!important;
+    }
+    body h1 {
+        font-size: 28px;
+    }
+    body h2 {
+        font-size: 24px;
+    }
+    body h3 {
+        font-size: 18px;
+    }
+    body h4 {
+        font-size: 16px;
+    }
+    body h5 {
+        font-size: 14px;
+    }
+    body h6 {
+        font-size: 14px;
+    }
+    .wrapper {
+        width: 100%;
+        max-width: inherit;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .header{
+        height:8%!important;
+    }
+    .logo-box{
+        top:4%!important;
+    }
+    .user-account{
+        padding-top: 3%!important;
+        border-bottom-left-radius: 24px!important;
+        text-align: center;
+    }
+    .dropdown-content{
+        margin-top: 19% !important;
+    }
+    .logout{
+        height: 35% !important;
+    }
+    .user-name-header{
+        font-size: 20px;
+    }
+    ul li a{
+        font-size: 22px;
+    }
+    p{
+        font-size: 22px!important;
+    }
+
+    body h1 {
+        font-size: 28px;
+    }
+
+    body h2 {
+        font-size: 24px;
+    }
+    body h3 {
+        font-size: 24px;
+    }
+    body h4 {
+        font-size: 18px;
+    }
+    body h5 {
+        font-size: 16px;
+    }
+    body h6 {
+        font-size: 14px;
+    }
+    .wrapper {
+        width: 100%;
+        max-width: inherit;
+    }
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+}
+@media (min-width: 200px) and (max-width: 767px) {
+    p{
+        font-size: 22px!important;
+    }
+    body h1 {
+        font-size: 28px;
+    }
+    body h2 {
+        font-size: 24px;
+    }
+    body h3 {
+        font-size: 20px;
+    }
+    body h4 {
+        font-size: 18px;
+    }
+    body h5 {
+        font-size: 16px;
+    }
+    body h6 {
+        font-size: 14px;
+    }
+    .wrapper {
+        width: 100%!important;
+        max-width: inherit;
+    }
+
+
+}
