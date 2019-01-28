@@ -1,8 +1,8 @@
 <?php
 include 'includes/header.php';
 //$result1=listWhere("cart",array("customer_id" => $_SESSION['loggedInUser']));
-$cust_id = $_SESSION['loggedInUser'];
-//$cust_id = 2;
+//$cust_id = $_SESSION['loggedInUser'];
+$cust_id = 1;
 ?>
 <html>
 <body>
@@ -24,11 +24,16 @@ $cust_id = $_SESSION['loggedInUser'];
             <?php
             $result=listAllActive($cust_id);
             while ($row=fetch_array($result)){
-                echo "<tr><td>".$row['cart_id']."</td><td>".$row['category']."</td><td>".$row['serving']."</td><td><button><a href=\"cart/deleteCart.php?cart_id=<?php echo $cart_id?>\"> Delete</a></button></td>";?>
+                echo "<tr><td>".$row['cart_id']."</td><td>".$row['category']."</td><td>".$row['serving']."</td><td>"?><a href="cart/deleteCart.php?cart_id=<?php echo $cart_id?>"> Delete</a></td>";
                 <?php
             }
             ?>
             </tbody>
+            <tfoot><tr>
+                <th >Total :</th>
+                <td></td><td></td><td></td><td><b></b></td><td><b>".$total_markedprice."</b></td><td></td><td></td><td></td><td></td>
+            </tr>
+            </tfoot>";
         </table>
     </main>
 </div>

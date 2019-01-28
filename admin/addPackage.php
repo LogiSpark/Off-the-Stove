@@ -6,7 +6,7 @@ include 'includes/adminheader.php'
         <h3>Add Package</h3>
     </div>
     <div class="section-wrapper">
-        <form class = "form-horizontal" method="POST" enctype="multipart/form-data" action="recipe/addRecipe.php">
+        <form class = "form-horizontal" method="POST" enctype="multipart/form-data" action="package/addPackage.php">
             <div class="form-group">
                 <label for = "name" class = "control-label col-sm-1">Name*</label>
                 <div class="col-sm-5">

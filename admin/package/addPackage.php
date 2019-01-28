@@ -1,7 +1,7 @@
 <?php
 include '../function.php';
 
-$target_dir = '../../images/recipe/';
+$target_dir = '../../images/package/';
 
 if(isset($_FILES['photo']))
 {

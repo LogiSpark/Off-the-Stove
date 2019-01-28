@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Off-the-Stove</title>
+    <title>Off-the-Stove<?php if (isset($current_page) && $current_page!='Home'){ echo " | ".$current_page;}?></title>
     <link rel="icon" type="image/x-icon" href="images/logo_small.jpg"/>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -10,37 +10,22 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="admin/style/css/style.css" rel="stylesheet" type="text/css" media="all">
 
+    <script src="layout/scripts/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="layout/scripts/jquery.backtotop.js"></script>
+    <script src="layout/scripts/jquery.mobilemenu.js"></script>
+    <script src="layout/scripts/jquery.flexslider-min.js"></script>
+    <script src="layout/scripts/notify.min.js"></script>
 
 </head>
 <?php
 include "function.php";
+session_start();
+if (isset($_SESSION['loggedInUser']))
+    include "includes/top_bar_login.php";
+else
+    include "includes/top_bar.php";
 ?>
-<body id="top">
-<div class="wrapper row0">
-    <div id="topbar" class="hoc clear">
-        <div class="cart">
-            <div class="cart-in">
-                <i class="fa fa-shopping-cart cart-icon" onclick="panel()"></i>
-                <span class="num">2</span>
-            </div>
-        </div>
-
-
-        <div class="fl_left">
-            <ul>
-                <li><i class="fa fa-phone"></i> +977 9860 261777</li>
-                <!--<li><i class="fa fa-envelope-o"></i> info@domain.com</li>-->
-            </ul>
-        </div>
-        <div class="fl_right">
-            <ul>
-                <li><a href="#">Login</a></li>
-                <li><a href="#">Register</a></li>
-            </ul>
-        </div>
-
-    </div>
-</div>
 <!-- Top Background Image Wrapper -->
 <div class="bgded overlay" style="background-image:url('images/carrots-cucumber-delicious-1640777.jpg');">
     <div class="wrapper row1">
@@ -51,51 +36,23 @@ include "function.php";
             </div>
             <nav id="mainav" class="fl_right">
                 <ul class="clear">
-                    <li class="active"><a href="index.php">Home</a></li>
-                    <li><a href="#">Recipe</a>
-                        <!--<ul>-->
-                        <!--<li><a href="pages/gallery.html">Gallery</a></li>-->
-                        <!--</ul>-->
-                    </li>
-                    <li><a href="#">Services</a></li>
+                    <?php
+                    $menu=array('Home','Recipe','Package','Demo');
+                    for ($i=0;$i<sizeof($menu);$i++){
+                        $location=strtolower($menu[$i]);
+                        if ($menu[$i]=="Home"){
+                            $location="index";
+                        }
+                        if (isset($current_page) && $current_page==$menu[$i]) {
+                            echo "<li class='active'><a href=\"" . $location . ".php\">" . $menu[$i] . "</a></li>";
+                        }else{
+                            echo "<li><a href=\"" . $location . ".php\">" . $menu[$i] . "</a></li>";
+                        }
+                    }
+                    ?>
                 </ul>
             </nav>
         </header>
-    </div>
-
-    <div id="myDropdown" class="dropdown-content w3-container w3-center w3-animate-right">
-        <div class="arrow-up"></div>
-        <div class="col-md-12 pad-top no-side-pad ">
-            <div class="cart-panel">
-
-                <div class="cart-img">
-                    <img src="images/recipe/chickenfried.jpg" class="round-img">
-                </div>
-                <div class="cart-details">
-                    <h6>Food</h6>
-                    <ul class="">
-                        <li>Price:2000</li>
-                        <li>Quantity:2</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="cart-panel">
-
-                <div class="cart-img">
-                    <img src="images/recipe/chickenfried.jpg" class="round-img">
-                </div>
-                <div class="cart-details">
-                    <h6>Food</h6>
-                    <ul class="">
-                        <li>Price: 2000</li>
-                        <li>Quantity: 2</li>
-                    </ul>
-                </div>
-            </div>
-
-            <a href="#">View All<i class="fa fa-arrow-right"></i></a>
-        </div>
-
     </div>
 
     <script>

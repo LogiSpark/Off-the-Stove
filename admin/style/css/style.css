@@ -76,6 +76,7 @@ html, body{
     border-right: 20px solid transparent;
     border-bottom: 20px solid #1e2226;
     top: -8%;
+    z-index: 11;
     right: 12%;
 }
 
@@ -93,9 +94,7 @@ html, body{
     height: auto;
     z-index: 10;
     right: 0;
-    top:2%;
-
-
+    top:8%;
     /*margin-top:8%;*/
 
 }
